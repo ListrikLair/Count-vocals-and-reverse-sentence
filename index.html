@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+
+    </style>
+</head>
+
+<body>
+
+    <div id="app"></div>
+    
+    <script>
+        //model
+        let aCount = 0;
+        let eCount = 0;
+        let iCount = 0;
+        let oCount = 0;
+        let uCount = 0;
+        let yCount = 0;
+        let æCount = 0;
+        let øCount = 0;
+        let åCount = 0;
+        let wordcount;
+
+        //view
+        updateView();
+        countLetters();
+        function updateView() {
+            document.getElementById("app").innerHTML = /*HTML*/`
+        <div id="text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam, inventore quae repellat numquam dignissimos voluptatibus quia eligendi praesentium repellendus dolores libero et aspernatur facere maiores voluptates aperiam? Aut, minima dolor!</div>
+        <div id="output">
+            <div><li>${aCount} number of a's</li></div>
+            <div><li>${eCount} number of e's</li></div>
+            <div><li>${iCount} number of i's</li></div>
+            <div><li>${oCount} number of o's</li></div>
+            <div><li>${uCount} number of u's</li></div>
+            <div><li>${yCount} number of y's</li></div>
+            <div><li>${æCount} number of æ's</li></div>
+            <div><li>${øCount} number of ø's</li></div>
+            <div><li>${åCount} number of å's</li></div>
+        </div>
+        `;
+    }
+
+        //controller
+        function countLetters(){
+        wordCount = document.getElementById("text").innerHTML;
+        for (i = 0; i <=wordCount.length; i++){
+            char = wordCount[i];
+            if(char === 'a' || char === 'A'){
+                aCount++;
+            }
+            if(char === 'e' || char === 'E'){
+                eCount++;
+            }
+            if(char === 'i' || char === 'I'){
+                iCount++;
+            }
+            if(char === 'o' || char === 'O'){
+                oCount++;
+            }
+            if(char === 'u' || char === 'U'){
+                uCount++;
+            }
+            if(char === 'y' || char === 'Y'){
+                yCount++;
+            }
+            if(char === 'æ' || char === 'Æ'){
+                æCount++;
+            }
+            if(char === 'ø' || char === 'Ø'){
+                øCount++;
+            }
+            if(char === 'å' || char === 'Å'){
+                åCount++;
+            }
+        }
+        updateView();
+    }
+    </script>
+</body>
+
+</html>

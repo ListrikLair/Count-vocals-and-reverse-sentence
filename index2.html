@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div id="app"></div>
+
+    <script>
+        //model
+        let allText = '';
+        let backwardsText = '';
+
+        //view
+        updateView();
+        function updateView() {
+            document.getElementById("app").innerHTML = /*HTML*/`
+        <input id="inputText" type="text" size="20">
+        <button onclick = "reverseText()">Reverser</button>
+        <div>${allText}</div> </br>
+        <div id="output">${backwardsText}</div>
+        `;
+        }
+        //controller
+        function reverseText() {
+            allText = document.getElementById("inputText").value;
+            for (i = allText.length - 1; i >= 0; i--) {
+                char = allText[i];
+                backwardsText += char
+            }
+            updateView();
+            backwardsText = '';
+        }
+
+    </script>
+</body>
+
+</html>
